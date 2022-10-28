@@ -1,2 +1,2 @@
 <p>This is the posts!</p>
-<div *ngFor="let post of posts">{{post.id}} - {{post.title}} <button [routerLink]="['/post/', post.id]">OPEN</button> - <button (click)="postDelete(post.id)">DELETE</button></div>
+<div *ngFor="let post of posts; let i = index">{{post.id}} - {{post.title}} <button [routerLink]="['/post/', post.id]">OPEN</button> - <button (click)="postDelete(i)">DELETE</button></div>

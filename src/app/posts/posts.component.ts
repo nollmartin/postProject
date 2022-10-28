@@ -26,10 +26,8 @@ export class PostsComponent implements OnInit {
     this.postsService.setPostDelete(id).subscribe(ret => {ret.status===200?this.RemoveElementFromObjectArray(id):false});
   }
 
-  private RemoveElementFromObjectArray(key: number) {
-    this.posts?.forEach((value,index)=>{
-        if(value.id==key) this.posts?.splice(index,1);
-    });
+  private RemoveElementFromObjectArray(i: number) {
+    this.posts?.splice(i,1);
   }
 
 }
