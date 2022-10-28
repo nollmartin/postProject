@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpStatusCode } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,4 +20,10 @@ export class PostsService {
       )
     );
   }
+
+  setPostDelete(id: any): Observable<any> {
+    return this.http.get<any>(`https://jsonplaceholder.typicode.com/posts/`+id+`/`, {params: {method: 'DELETE'}, observe: 'response'})
+    .pipe(map(ret => ret));
+  }
+
 }

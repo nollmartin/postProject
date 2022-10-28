@@ -9,6 +9,10 @@ const routes: Routes = [{
 {
   path: 'posts',
   loadChildren: () => import('./posts/posts.module').then(m => m.PostsModule)
+},
+{
+  path: 'post',
+  loadChildren: () => import('./post/post.module').then(m => m.PostModule)
 }];
 
 @NgModule({
